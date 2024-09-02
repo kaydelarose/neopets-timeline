@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- nav bar -->
+
+     <header>
+        <nav class="navbar"> 
+            <a href="/" class="logo">
+                <img src="images/logo.png" id="logo-image">
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-item">Play Neopets</a>
+                <a href="#" class="nav-item">Faerie's Hope</a>
+                <a href="#" class="nav-item">Tales of Dacardia</a>
+                <a href="#" class="nav-item">World of Neopets</a>
+            </div>
+
+            
+            <!-- dropdown menu section -->
+            <div class="dropdown">
+                <button class="dropbtn">Merchandise</button>
+                <div class="dropdown-content">
+                    <a href="#">Clothing</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Toys</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">News</button>
+                <div class="dropdown-content">
+                    <a href="#">Updates</a>
+                    <a href="#">Events</a>
+                    <a href="#">Announcements</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">About</button>
+                <div class="dropdown-content">
+                    <a href="#">Our Story</a>
+                    <a href="#">Team</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+
+            <!-- log in / sign up button -->
+
+            <a href="#" class="login-signup-btn">Log In / Sign Up</a>
+
+        </nav>
+    </header>
+
+    <!-- page container-->
+    
+    <main class="fullpage-container" id="page-container">
+
+    <!-- wizard character section -->
+        <div class="wizard-section">
+            <img src="images/25character2.png" class="wizard-image">
+            <div class="wizard-text-box">
+                <p>Learn more about the history of Neopets!</p>
+            </div>
+        </div>
+
+
+        <div class="book-container">
+            <img src="images/book-open.png" id="full-book" alt="Full Book">
+            <img src="images/left-page.png" id="left-page" alt="Left Page">
+            <img src="images/right-page.png" id="right-page" alt="Right Page">
+        
+            <!-- book content -->
+            <div class="book-content left-page-content">
+                <img src="" alt="Left Page Image" class="left-page-image">
+            </div>
+            <div class="book-content right-page-content">
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <!-- book buttons -->
+            <button id="prev-page" class="page-button">Previous</button>
+            <button id="next-page" class="page-button">Next</button>
+        </div>   
+    </main>
+
+    <!-- cloud section -->
+    <section class="cloud" style="background-image: url('https://images.neopets.com/brandhub/images/bg-images/bg-cloud-3.svg');">
+    </section>
+    
+    <footer>
+    </footer>
+
+    <script src="js/pages.js"></script>
+</body>
+</html>

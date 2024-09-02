@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* nav bar styling */
+
+.navbar {
+    background-image: url('../images/nav_background.png');
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 10;
+    padding-right: 100px;
+}
+
+.logo img {
+    height: 60px;
+    padding-left: 50px;
+}
+
+.nav-links {
+    background-color: white; 
+    border-radius: 50px;
+    padding: 0px 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-item {
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #f0f0f0; 
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dropbtn {
+    background-color: transparent; 
+    color: white; 
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 5;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* log in and sign up styling */
+
+.login-signup-btn {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-left: 20px; 
+}
+
+.login-signup-btn:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    color: white;
+}
+
+
+
+/* Page container styling */
+
+.fullpage-container {
+    position: relative;
+    background-image: url('../images/night-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Wizard Section Styling */
+
+.wizard-section {
+    position: absolute;
+    top: 50%;
+    left: 7%; 
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; 
+}
+
+.wizard-image {
+    width: 700px; 
+    height: auto;
+}
+
+.wizard-text-box {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Orange gradient background */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 25px; 
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    max-width: 300px; 
+    border: 2px solid white; 
+    transition: background 0.3s ease; 
+}
+
+.wizard-text-box:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+}
+
+/* book container styling */
+
+.book-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(0%, -50%); /* shifting right */
+    width: 80%; 
+    max-width: 850px;
+    height: auto;
+    z-index: 1;
+    padding-bottom: 400px;
+    perspective: 1000px;
+}
+
+/* Full book image */
+
+#full-book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: auto;
+    z-index: 1; /* behind left and right pages */
+    perspective: 1500px;
+}
+
+/* Left page */
+#left-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; 
+    height: auto;
+    z-index: 2;
+    transform-origin: center left; 
+    transform-style: preserve-3d; 
+    backface-visibility: hidden;  
+}
+
+/* Right page */
+#right-page {
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    width: 50%; 
+    height: auto;
+    z-index: 2;
+    transform-origin: center right; 
+    transform-style: preserve-3d;  
+    backface-visibility: hidden;  
+}
+
+/* Keyframes for the left page turn animation */
+
+@keyframes left-page-turn {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+/* Keyframes for the right page turn animation */
+@keyframes right-page-turn {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+
+/* applying the animations to the left and right pages */
+/* not working */
+
+.left-page.animate {
+    animation: left-page-turn 0.6s ease-in-out forwards;
+}
+
+.right-page.animate {
+    animation: right-page-turn 0.6s ease-in-out forwards;
+}
+
+
+/* book content page */
+
+.book-content {
+    position: absolute;
+    padding: 20px;
+    color: #333;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-page-content {
+    top: 10%;
+    left: 9%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 3;
+}
+
+.left-page-content img {
+    width: 80%; 
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    z-index: 4;
+}
+
+.right-page-content {
+    top: 30%;
+    right: 10%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+}
+
+.right-page-content h2, .right-page-content p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* page buttons styling */
+
+.page-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background might change */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+#prev-page {
+    left: 10%; 
+    top: 100%;
+}
+
+
+#next-page {
+    right: 10%; 
+    top: 100%;
+}
+
+.page-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* cloud animation */
+
+.cloud {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 200%;
+    height: 144px;
+    animation: wave 60s cubic-bezier(.36,.45,.63,.53) infinite;
+    transform: translateZ(0);
+    z-index: 1; 
+    margin-top: -135px;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
