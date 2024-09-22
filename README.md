@@ -21,7 +21,7 @@ Make sure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/neopets-timeline.git
+   git clone https://github.com/kaydelarose/neopets-timeline.git
 2. **Option 1: Run via Visual Studio Code:**:
 - Open **Visual Studio Code.**
 - Navigate to **File > Open Folder** and select the cloned project directory.
